@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^10.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "node-fetch": "^3.1.0"
+  },
+  "name": "trietrobotvjp-server",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "set NODE_ENV=development&&set dotenv_config_path=./dev.env&&nodemon --experimental-json-modules -r dotenv/config ./src/index.js",
+    "deploy": "railway link 8852e0a7-616d-492d-a213-3f058e68ade8&&railway up",
+    "start": "node --experimental-json-modules -r dotenv/config ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}

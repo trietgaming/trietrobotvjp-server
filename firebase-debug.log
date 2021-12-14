@@ -1,0 +1,90 @@
+[debug] [2021-11-17T03:53:44.277Z] ----------------------------------------------------------------------
+[debug] [2021-11-17T03:53:44.279Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Triet\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-11-17T03:53:44.279Z] CLI Version:   9.21.0
+[debug] [2021-11-17T03:53:44.279Z] Platform:      win32
+[debug] [2021-11-17T03:53:44.280Z] Node Version:  v16.8.0
+[debug] [2021-11-17T03:53:44.281Z] Time:          Wed Nov 17 2021 10:53:44 GMT+0700 (Indochina Time)
+[debug] [2021-11-17T03:53:44.281Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-17T03:53:44.287Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-17T03:53:44.288Z] > authorizing via signed-in user (triet123vn@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\trietrobotvjp-server
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-11-17T03:54:52.593Z] > refreshing access token with scopes: []
+[debug] [2021-11-17T03:54:52.594Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T03:54:52.862Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 17 Nov 2021 03:54:52 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:54:52.875Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-11-17T03:54:53.648Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-11-17T03:54:53.648Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project trietrobotvjp1 (trietrobotvjp) 
+[info] 
+=== Firestore Setup
+[debug] [2021-11-17T03:54:59.103Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-17T03:54:59.103Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-17T03:54:59.347Z] <<< HTTP RESPONSE 200 {"date":"Wed, 17 Nov 2021 03:54:58 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:54:59.355Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/trietrobotvjp1/services/firestore.googleapis.com  
+ 
+[debug] [2021-11-17T03:55:00.805Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:55:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:55:00.806Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/trietrobotvjp1  
+ 
+[debug] [2021-11-17T03:55:01.350Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:55:00 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:55:01.350Z] database_type: CLOUD_FIRESTORE
+[debug] [2021-11-17T03:55:01.351Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-17T03:55:01.351Z] > authorizing via signed-in user (triet123vn@gmail.com)
+[debug] [2021-11-17T03:55:01.351Z] [iam] checking project trietrobotvjp1 for permissions ["firebase.projects.get"]
+[debug] [2021-11-17T03:55:01.351Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/trietrobotvjp1:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-11-17T03:55:02.455Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:55:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=830","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-11-17T03:55:11.280Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/trietrobotvjp1/releases?pageSize=10&pageToken=  
+ 
+[debug] [2021-11-17T03:55:12.751Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:55:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:55:12.752Z] Found ruleset: projects/trietrobotvjp1/rulesets/9a572af8-d073-49d9-850b-f26f332c0cfd
+[debug] [2021-11-17T03:55:12.752Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/trietrobotvjp1/rulesets/9a572af8-d073-49d9-850b-f26f332c0cfd  
+ 
+[debug] [2021-11-17T03:55:13.936Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:55:13 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-11-17T03:55:18.383Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/trietrobotvjp1/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2021-11-17T03:55:18.384Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/trietrobotvjp1/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2021-11-17T03:55:19.038Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:55:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:55:19.052Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 17 Nov 2021 03:55:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-17T03:55:19.271Z] Error: EISDIR: illegal operation on a directory, open 'E:\trietrobotvjp-server'
+    at Object.openSync (node:fs:585:3)
+    at Object.writeFileSync (node:fs:2153:35)
+    at Object.createFileSync (C:\Users\Triet\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:43:6)
+    at Config.writeProjectFile (C:\Users\Triet\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:144:12)
+    at C:\Users\Triet\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\firestore\indexes.js:51:27
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Object.doSetup [as firestore] (C:\Users\Triet\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\firestore\index.js:36:5)
+    at async init (C:\Users\Triet\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:19:9)
+[error] 
+[error] Error: An unexpected error has occurred.
