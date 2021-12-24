@@ -1,7 +1,8 @@
 import { Router } from "express";
 import getAppFirebase from "../../firebase/getAppFirebase.js";
 import Account from "../../database/models/Account.js";
-import UserData from "../../database/models/UserData.js";
+import "dotenv/config";
+import createNewAccount from "../../database/methods/accounts/createNewAccount.js";
 
 const registerRouter = Router();
 
@@ -14,7 +15,6 @@ registerRouter.post("/", async (req, res, next) => {
       message: "Yêu cầu không hợp lệ",
     });
   const { auth } = getAppFirebase();
-  const currentUserUid = await Account.estimatedDocumentCount();
   try {
     await auth.getUserByEmail(email);
     return next({
@@ -24,28 +24,18 @@ registerRouter.post("/", async (req, res, next) => {
     });
   } catch {
     try {
-      const newAccount = new Account({
-        _id: currentUserUid,
+      const user = await createNewAccount({
+        firebase: {
+          email,
+          password,
+          displayName,
+        },
       });
-      console.log("new Account:");
-      console.log(newAccount);
-      const user = await auth.createUser({
-        uid: currentUserUid.toString(),
-        email,
-        password,
-        displayName,
-      });
-      await newAccount.save();
-      console.log(user);
-      console.log();
       const token = await auth.createCustomToken(user.uid);
-      res.json({ ok: true, token });
-    } catch (err) {      
-      next({
-        statusCode: 400,
-        code: err?.code,
-      });
+      return res.json({ ok: true, token });
+    } catch (err) {
       console.log(err);
+      next({ statusCode: 500, ...err });
     }
   }
 });

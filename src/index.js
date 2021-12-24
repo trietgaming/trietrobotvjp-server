@@ -9,13 +9,12 @@ import usersRoute from "./routes/users/index.js";
 
 const main = async () => {
   const app = express();
-
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(cors());
 
   app.get("/", (req, res) => {
-    res.send("Hello World!");
+    res.redirect(process.env.CLIENT_DOMAIN);
   });
 
   app.use("/profile", profileRoute);
@@ -28,7 +27,9 @@ const main = async () => {
   console.log("Connected to the Database");
 
   app.listen(process.env.PORT, () => {
-    console.log(`App is listening at ${process.env.DOMAIN}:${process.env.PORT}`);
+    console.log(
+      `App is listening at ${process.env.DOMAIN}:${process.env.PORT}`
+    );
   });
 };
 
