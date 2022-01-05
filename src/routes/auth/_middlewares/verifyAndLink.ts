@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import getAppFirebase from "@appFirebase/getAppFirebase";
-import verifyUserWithEmailAndPassword from "@appFirebase/verifyUserWithEmailAndPassword";
+import getAppFirebase from "../../../appFirebase/getAppFirebase";
+import verifyUserWithEmailAndPassword from "../../../appFirebase/verifyUserWithEmailAndPassword";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
   const { password, jwtToken } = req.body as {

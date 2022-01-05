@@ -1,6 +1,6 @@
-import getAppFirebase from "@appFirebase/getAppFirebase";
+import getAppFirebase from "../../../appFirebase/getAppFirebase";
 import { Response, NextFunction } from "express";
-import { FetchedOauthUserRequest } from "@interfaces";
+import { FetchedOauthUserRequest } from "../../../interfaces";
 
 export default async (
   req: FetchedOauthUserRequest,

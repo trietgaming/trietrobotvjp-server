@@ -1,8 +1,8 @@
 import { Response, NextFunction } from "express";
-import getAppFirebase from "@appFirebase/getAppFirebase";
+import getAppFirebase from "../../../appFirebase/getAppFirebase";
 import jwt from "jsonwebtoken";
-import createNewAccount from "@db/methods/accounts/createNewAccount";
-import { FetchedOauthUserRequest } from "@interfaces";
+import createNewAccount from "../../../db/methods/accounts/createNewAccount";
+import { FetchedOauthUserRequest } from "../../../interfaces";
 
 export default async (
   req: FetchedOauthUserRequest,

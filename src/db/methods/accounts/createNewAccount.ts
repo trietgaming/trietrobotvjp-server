@@ -1,5 +1,5 @@
-import getAppFirebase from "@appFirebase/getAppFirebase";
-import db from "@db";
+import getAppFirebase from "../../../appFirebase/getAppFirebase";
+import db from "../..";
 import { CreateRequest } from "firebase-admin/auth";
 
 export default async ({

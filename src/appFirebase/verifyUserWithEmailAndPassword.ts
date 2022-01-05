@@ -1,5 +1,5 @@
 import fetch from "cross-fetch";
-import { EmailAndPasswordVerifyResult } from "@interfaces";
+import { EmailAndPasswordVerifyResult } from "src/interfaces";
 
 export default async (
   email: string,

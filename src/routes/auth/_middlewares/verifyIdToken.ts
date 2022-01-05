@@ -1,5 +1,5 @@
-import getAppFirebase from "@appFirebase/getAppFirebase";
-import { AuthRequest } from "@interfaces";
+import getAppFirebase from "../../../appFirebase/getAppFirebase";
+import { AuthRequest } from "../../../interfaces";
 import { NextFunction, Response } from "express";
 
 export default async (req: AuthRequest, res: Response, next: NextFunction) => {

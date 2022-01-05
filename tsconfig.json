@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2021",
-    "outDir": "./build",
+    "outDir": "./build/src",
     "module": "CommonJS",
     "strict": true,
     "sourceMap": false,
@@ -14,11 +14,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@routes/*": ["./src/routes/*"],
-      "@interfaces": ["./src/interfaces/index.ts"],
-      "@appFirebase/*": ["./src/appFirebase/*"],
-      "@db/*": ["./src/database/*"],
-      "@db": ["./src/database/index.ts"]
+      "src/*": ["./src/*"]
     }
   },
   "include": ["src/**/*"],

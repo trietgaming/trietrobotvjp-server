@@ -1,6 +1,10 @@
 import fetch from "cross-fetch";
 import { NextFunction, Response } from "express";
-import { FetchedOauthUserRequest, RawDiscordUserResponse, RawFacebookUserResponse } from "@interfaces";
+import {
+  FetchedOauthUserRequest,
+  RawDiscordUserResponse,
+  RawFacebookUserResponse,
+} from "../../../interfaces";
 
 export default async (
   req: FetchedOauthUserRequest,

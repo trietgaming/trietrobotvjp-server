@@ -1,6 +1,6 @@
 import { Router } from "express";
-import getAppFirebase from "@appFirebase/getAppFirebase";
-import db from "@db";
+import getAppFirebase from "../../../appFirebase/getAppFirebase";
+import db from "../../../db";
 
 const accountRouter = Router();
 

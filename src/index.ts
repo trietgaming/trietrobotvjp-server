@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import authRoute from "@routes/auth";
-import usersRoute from "@routes/users";
-import { ClientCallException } from "@interfaces";
+import authRoute from "./routes/auth";
+import usersRoute from "./routes/users";
+import { ClientCallException } from "./interfaces";
 
 process.env.PRIVATE_KEY = (process.env.PRIVATE_KEY as string).replace(
   /\\n/g,

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import getAppFirebase from "@appFirebase/getAppFirebase";
-import createNewAccount from "@db/methods/accounts/createNewAccount";
+import getAppFirebase from "../../../appFirebase/getAppFirebase";
+import createNewAccount from "../../../db/methods/accounts/createNewAccount";
 
 const registerRouter = Router();
 

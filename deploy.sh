@@ -1,5 +1,3 @@
-npm run tsbuild
-echo "built"
 cd build
 echo "change dir to build"
 cp ../package.json package.json

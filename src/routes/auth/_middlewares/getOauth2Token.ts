@@ -2,7 +2,7 @@ import fetch from "cross-fetch";
 import {
   FetchedOauth2AccessTokenRequest,
   Oauth2AccessTokenResponse,
-} from "@interfaces";
+} from "src/interfaces";
 import { Response, NextFunction } from "express";
 import { URLSearchParams } from "url";
 
