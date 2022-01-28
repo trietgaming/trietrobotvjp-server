@@ -1,8 +1,6 @@
-import { Router } from "express";
+import { FastifyPluginCallback } from "fastify";
 import accountRouter from "./account";
 
-const userRouter = Router();
-
-userRouter.use("/account", accountRouter);
-
-export default userRouter;
+export default (async (fastify) => {
+  fastify.register(accountRouter, { prefix: "/account" });
+}) as FastifyPluginCallback;

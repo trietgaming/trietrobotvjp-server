@@ -1,5 +1,6 @@
-import { Request } from "express";
+import { FastifyRequest } from "fastify";
 import { DecodedIdToken } from "firebase-admin/auth";
+import { AvailableProviders } from "../types";
 
 export interface ClientCallException {
   statusCode: number;
@@ -14,6 +15,15 @@ export interface Oauth2AccessTokenResponse {
   expires_in: number;
   refresh_token?: string;
   scope?: string;
+}
+
+export interface Oauth2TokenPayload {
+  accessToken: string;
+  tokenType: string;
+  expiresIn: number;
+  refreshToken?: string;
+  scope?: string;
+  oauth2Provider: AvailableProviders;
 }
 
 export interface RawDiscordUserResponse {
@@ -50,30 +60,16 @@ export interface RawFacebookUserResponse {
   first_name?: string;
 }
 
-export interface UserConverted {
+export interface FirebaseConvertedUser {
   uid: string;
   displayName: string;
   photoURL?: string;
   email?: string;
 }
 
-export interface AuthRequest extends Request {
+export interface ProviderLinkRequest extends Oauth2CallbackRequest {
   decodedToken?: DecodedIdToken;
-}
-
-export interface FetchedOauth2AccessTokenRequest extends AuthRequest {
-  accessToken?: string;
-  tokenType?: string;
-  oauthProvider?: string;
-}
-
-export interface FetchedOauthUserRequest
-  extends FetchedOauth2AccessTokenRequest {
-  oauthUser?: UserConverted;
-  /**
-   * "twitter.com" is "discord"
-   */
-  firebaseUserProvider?: "twitter.com" | "facebook.com";
+  query: { code?: string; error?: string; state: string };
 }
 
 export interface EmailAndPasswordVerifyResult {
@@ -83,4 +79,21 @@ export interface EmailAndPasswordVerifyResult {
   displayName: string;
   idToken: string;
   registered: boolean;
+}
+
+export interface UidAuthRequest extends FastifyRequest {
+  params: { uid?: string };
+}
+
+export interface Oauth2CallbackRequest extends FastifyRequest {
+  params: { provider: AvailableProviders };
+  query: { code?: string; error?: string };
+}
+
+export interface ConflictProviderRegisterJwtTokenPayload {
+  email: string;
+  id: string;
+  conflict: true;
+  displayName: string;
+  provider: AvailableProviders;
 }

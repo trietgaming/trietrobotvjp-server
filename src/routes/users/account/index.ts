@@ -1,67 +1,13 @@
-import { Router } from "express";
-import getAppFirebase from "../../../appFirebase/getAppFirebase";
-import db from "../../../db";
+import { FastifyPluginCallback, FastifySchema } from "fastify";
+import S from "fluent-json-schema";
+import preHandler from "./preHandler";
+import getHandler from "./get/handler";
+import getSchema from "./get/schema";
+import putHandler from "./put/handler";
+import putSchema from "./put/schema";
 
-const accountRouter = Router();
-
-interface ExpectedBody {
-  id_token: string;
-}
-
-accountRouter.post("/", async (req, res, next) => {
-  const { id_token: userIdToken }: ExpectedBody = req.body;
-  if (!userIdToken)
-    return next({
-      statusCode: 400,
-      message: "No Token provied",
-    });
-  const { auth } = getAppFirebase();
-  try {
-    const decodedToken = await auth.verifyIdToken(userIdToken);
-    if (!decodedToken || !decodedToken.email_verified || !decodedToken.user_id)
-      throw "invalid id";
-    const uid = decodedToken.user_id;
-
-    let result = await db.query(
-      `
-        SELECT 
-          is_inventory_public, 
-          is_tradable, 
-          is_balance_public, 
-          banner_id, 
-          wallet, 
-          bank, 
-          bank_limit, 
-          level,
-          (CASE WHEN pin_code IS NULL THEN false ELSE true END) AS has_pin_code
-        FROM accounts WHERE id = $1
-        `,
-      [uid]
-    );
-    if (!result.rows || !result.rows[0])
-      result = await db.query(
-        `
-      INSERT INTO accounts (id) VALUES ($1) RETURNING 
-      is_inventory_public, 
-      is_tradable, 
-      is_balance_public, 
-      banner_id, 
-      wallet, 
-      bank, 
-      bank_limit, 
-      level,
-      (CASE WHEN pin_code IS NULL THEN false ELSE true END) AS has_pin_code
-    `,
-        [uid]
-      );
-    return res.json(result.rows[0]);
-  } catch (err) {
-    console.log(err);
-    next({
-      statusCode: 400,
-      message: "invalid ID",
-    });
-  }
-});
-
-export default accountRouter;
+export default (async (fastify) => {
+  fastify.addHook("preHandler", preHandler);
+  fastify.get("/", { schema: getSchema }, getHandler);
+  fastify.put("/", { schema: putSchema }, putHandler);
+}) as FastifyPluginCallback;
